@@ -1,0 +1,26 @@
+@using ApiCoreModels
+@model ApiCoreModels.ResponseModel
+
+@{
+    ViewData["Title"] = "Results Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Omdb Movies</h1>
+    
+    <table class="table table-hover" style="text-align: left">
+        <thead>
+        <tr>
+            <th scope="col">Movie</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (MovieModel m in Model.Search)
+        {
+            <tr>
+                <td><a asp-controller="Home" asp-action="Movie" asp-route-id="@m.ImdbId">@m.Title</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

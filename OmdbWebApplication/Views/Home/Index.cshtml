@@ -1,0 +1,15 @@
+﻿@model Search
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Omdb Movies</h1>
+    
+    <form asp-action="Results" method="post">
+        <div class="box-container">
+            <input class="box" asp-for="MovieTitle"/>
+        </div>
+    </form>
+</div>
